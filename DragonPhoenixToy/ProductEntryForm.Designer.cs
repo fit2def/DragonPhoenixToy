@@ -171,6 +171,7 @@
             this.Controls.Add(this.productNameLabel);
             this.Name = "ProductEntryForm";
             this.Text = "Product Entry";
+            this.Load += new System.EventHandler(this.ProductEntryForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
