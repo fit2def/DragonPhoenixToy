@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DragonPhoenixToy
 {
-    public partial class Form1 : Form
+    public partial class CheckOutForm : Form
     {
-        public Form1()
+        public CheckOutForm()
         {
             InitializeComponent();
         }
