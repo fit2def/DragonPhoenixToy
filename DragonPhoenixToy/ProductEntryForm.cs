@@ -7,6 +7,8 @@ namespace DragonPhoenixToy
     public partial class ProductEntryForm : Form
     {
         private List<Product> allProducts;
+        private bool ValidNumericInputs;
+
         public ProductEntryForm()
         {
             allProducts = ProductRepository.GetProducts();
@@ -15,34 +17,63 @@ namespace DragonPhoenixToy
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            ResetValidation();
+
+            Product p = GetProductFromForm();
+            if (FormIsValid(p))
+                StoreProduct(p);
+        }
+
+        private void ResetValidation()
+        {
+            ValidNumericInputs = true;
+        }
+
+        private Product GetProductFromForm() =>
+           new Product
+           {
+               ID = productIdInput.Text,
+               Description = descriptionInput.Text,
+               Name = productNameInput.Text,
+               Price = GetPrice(),
+               OnHand = GetOnHand()
+           };
+
+        private double GetPrice()
+        {
+            double price = 0;
             try
             {
-                Product p = GetProductFromForm();
-                if (ProductIsValid(p))
-                    StoreProduct(p);
+                price = double.Parse(productPriceInput.Text);
             }
-            catch
+            catch (Exception)
             {
-                MessageBox.Show("Price and onhand should be a number.");
+                MessageBox.Show("The price must be a valid decimal number.");
+                productPriceInput.Focus();
+                ValidNumericInputs = false;
             }
+            return price;
         }
 
-        private Product GetProductFromForm()
+        private int GetOnHand()
         {
-            return new Product
+            int onHand = 0;
+            try
             {
-                ID = productIdInput.Text,
-                Description = descriptionInput.Text,
-                Name = productNameInput.Text,
-                Price = double.Parse(productPriceInput.Text),
-                OnHand = int.Parse(productOnHandInput.Text)
-            };
+                onHand = int.Parse(productOnHandInput.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Must enter a valid number of product on hand.");
+                productOnHandInput.Focus();
+                ValidNumericInputs = false;
+            }
+            return onHand;
         }
 
-
-        private bool ProductIsValid(Product p)
+        private bool FormIsValid(Product p)
         {
-            return ProductDoesntExist(p) && NoStringsAreEmpty(p);
+            return ValidNumericInputs && ProductDoesntExist(p) && NoStringsAreEmpty(p);
         }
 
         private bool ProductDoesntExist(Product p)
@@ -52,35 +83,53 @@ namespace DragonPhoenixToy
                 if (product.ID == p.ID)
                 {
                     MessageBox.Show("Product already exists.");
+                    productIdInput.Focus();
                     return false;
                 }
-
             }
             return true;
         }
 
-        private bool NoStringsAreEmpty(Product p)
-        {
-            bool filled =
-                !string.IsNullOrEmpty(p.ID) &
-                !string.IsNullOrEmpty(p.Name) &
-                !string.IsNullOrEmpty(p.Description);
-            if (!filled)
-                MessageBox.Show("You must fill all fields");
-            return filled;
+        private bool NoStringsAreEmpty(Product p) =>
+            IdFilled(p.ID) &
+            NameFilled(p.Name) &
+            DescriptionFilled(p.Description);
 
+        private bool IdFilled(string id)
+        {
+            bool filled = !string.IsNullOrEmpty(id);
+            if (!filled)
+                MessageBox.Show("Must provide product ID");
+            productIdInput.Focus();
+            return filled;
         }
 
+        private bool NameFilled(string name)
+        {
+            bool filled = !string.IsNullOrEmpty(name);
+            if (!filled)
+                MessageBox.Show("Must provide name");
+            productNameInput.Focus();
+            return filled;
+        }
 
+        private bool DescriptionFilled(string description)
+        {
+            bool filled = !string.IsNullOrEmpty(description);
+            if (!filled)
+                MessageBox.Show("Must provide product description");
+            descriptionInput.Focus();
+            return filled;
+        }
 
         private void StoreProduct(Product p)
         {
-
+            //Todo serialize product
         }
 
         private void ProductEntryForm_Load(object sender, EventArgs e)
         {
-
+            //Todo deserialize and store in allProducts
         }
     }
 }
