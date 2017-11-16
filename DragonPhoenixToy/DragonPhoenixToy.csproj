@@ -57,6 +57,7 @@
     <Compile Include="DisplayProductForm.Designer.cs">
       <DependentUpon>DisplayProductForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order.cs" />
     <Compile Include="ProductEntryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +82,12 @@
     <Compile Include="UpdateProductForm.Designer.cs">
       <DependentUpon>UpdateProductForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CheckOutForm.resx">
+      <DependentUpon>CheckOutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayProductForm.resx">
+      <DependentUpon>DisplayProductForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProductEntryForm.resx">
       <DependentUpon>ProductEntryForm.cs</DependentUpon>
     </EmbeddedResource>

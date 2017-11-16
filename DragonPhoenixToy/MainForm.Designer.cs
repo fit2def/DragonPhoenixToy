@@ -62,7 +62,7 @@
             this.DisplayInventoryButton.Name = "DisplayInventoryButton";
             this.DisplayInventoryButton.Size = new System.Drawing.Size(298, 207);
             this.DisplayInventoryButton.TabIndex = 2;
-            this.DisplayInventoryButton.Text = "&Display Button";
+            this.DisplayInventoryButton.Text = "&Display All Products";
             this.DisplayInventoryButton.UseVisualStyleBackColor = true;
             this.DisplayInventoryButton.Click += new System.EventHandler(this.DisplayInventoryButton_Click);
             // 
