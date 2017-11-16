@@ -11,7 +11,6 @@ namespace DragonPhoenixToy
 
         public ProductEntryForm()
         {
-            allProducts = ProductRepository.GetProducts();
             InitializeComponent();
         }
 
@@ -20,8 +19,12 @@ namespace DragonPhoenixToy
             ResetValidation();
 
             Product p = GetProductFromForm();
-            if (FormIsValid(p))
+
+            if (FormWasValid(p))
+            {
                 StoreProduct(p);
+                CleanUpForm();
+            }     
         }
 
         private void ResetValidation()
@@ -71,7 +74,7 @@ namespace DragonPhoenixToy
             return onHand;
         }
 
-        private bool FormIsValid(Product p)
+        private bool FormWasValid(Product p)
         {
             return ValidNumericInputs && ProductDoesntExist(p) && NoStringsAreEmpty(p);
         }
@@ -122,14 +125,39 @@ namespace DragonPhoenixToy
             return filled;
         }
 
-        private void StoreProduct(Product p)
+        private void StoreProduct(Product p) =>
+            ProductWriter.AddProduct(p);
+
+        private void CleanUpForm()
         {
-            //Todo serialize product
+            MessageBox.Show("Product saved!");
+            Clear();
+            productIdInput.Focus();
+        }
+
+        private void Clear()
+        {
+            productIdInput.Clear();
+            productNameInput.Clear();
+            descriptionInput.Clear();
+            productPriceInput.Clear();
+            productOnHandInput.Clear();
         }
 
         private void ProductEntryForm_Load(object sender, EventArgs e)
         {
-            //Todo deserialize and store in allProducts
+            var products = ProductReader.Products();
+            allProducts = products;
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

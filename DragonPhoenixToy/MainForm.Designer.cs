@@ -38,7 +38,7 @@
             // 
             // AddProductButton
             // 
-            this.AddProductButton.Location = new System.Drawing.Point(71, 254);
+            this.AddProductButton.Location = new System.Drawing.Point(79, 263);
             this.AddProductButton.Name = "AddProductButton";
             this.AddProductButton.Size = new System.Drawing.Size(298, 207);
             this.AddProductButton.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             // UpdateInventoryButton
             // 
-            this.UpdateInventoryButton.Location = new System.Drawing.Point(519, 254);
+            this.UpdateInventoryButton.Location = new System.Drawing.Point(530, 263);
             this.UpdateInventoryButton.Name = "UpdateInventoryButton";
             this.UpdateInventoryButton.Size = new System.Drawing.Size(298, 207);
             this.UpdateInventoryButton.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // DisplayInventoryButton
             // 
-            this.DisplayInventoryButton.Location = new System.Drawing.Point(932, 254);
+            this.DisplayInventoryButton.Location = new System.Drawing.Point(981, 263);
             this.DisplayInventoryButton.Name = "DisplayInventoryButton";
             this.DisplayInventoryButton.Size = new System.Drawing.Size(298, 207);
             this.DisplayInventoryButton.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             // CheckOutButton
             // 
-            this.CheckOutButton.Location = new System.Drawing.Point(1320, 254);
+            this.CheckOutButton.Location = new System.Drawing.Point(1432, 263);
             this.CheckOutButton.Name = "CheckOutButton";
             this.CheckOutButton.Size = new System.Drawing.Size(298, 207);
             this.CheckOutButton.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             // ExitButton
             // 
-            this.ExitButton.Location = new System.Drawing.Point(264, 544);
+            this.ExitButton.Location = new System.Drawing.Point(346, 659);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(1139, 162);
             this.ExitButton.TabIndex = 4;
@@ -89,9 +89,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(710, 113);
+            this.label1.Font = new System.Drawing.Font("Lucida Handwriting", 28.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(81, 81);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(379, 25);
+            this.label1.Size = new System.Drawing.Size(1649, 97);
             this.label1.TabIndex = 5;
             this.label1.Text = "Dragon Phoenix Toy Inventory System";
             // 
@@ -99,7 +100,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1675, 762);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1802, 1013);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.CheckOutButton);

@@ -54,7 +54,7 @@
             // 
             // productNameInput
             // 
-            this.productNameInput.Location = new System.Drawing.Point(429, 175);
+            this.productNameInput.Location = new System.Drawing.Point(337, 175);
             this.productNameInput.Name = "productNameInput";
             this.productNameInput.Size = new System.Drawing.Size(234, 31);
             this.productNameInput.TabIndex = 1;
@@ -107,28 +107,28 @@
             // 
             // productOnHandInput
             // 
-            this.productOnHandInput.Location = new System.Drawing.Point(429, 425);
+            this.productOnHandInput.Location = new System.Drawing.Point(337, 425);
             this.productOnHandInput.Name = "productOnHandInput";
             this.productOnHandInput.Size = new System.Drawing.Size(234, 31);
             this.productOnHandInput.TabIndex = 7;
             // 
             // productPriceInput
             // 
-            this.productPriceInput.Location = new System.Drawing.Point(429, 341);
+            this.productPriceInput.Location = new System.Drawing.Point(337, 341);
             this.productPriceInput.Name = "productPriceInput";
             this.productPriceInput.Size = new System.Drawing.Size(234, 31);
             this.productPriceInput.TabIndex = 8;
             // 
             // descriptionInput
             // 
-            this.descriptionInput.Location = new System.Drawing.Point(429, 265);
+            this.descriptionInput.Location = new System.Drawing.Point(337, 265);
             this.descriptionInput.Name = "descriptionInput";
             this.descriptionInput.Size = new System.Drawing.Size(234, 31);
             this.descriptionInput.TabIndex = 9;
             // 
             // productIdInput
             // 
-            this.productIdInput.Location = new System.Drawing.Point(429, 96);
+            this.productIdInput.Location = new System.Drawing.Point(337, 90);
             this.productIdInput.Name = "productIdInput";
             this.productIdInput.Size = new System.Drawing.Size(234, 31);
             this.productIdInput.TabIndex = 10;
@@ -141,6 +141,7 @@
             this.ClearButton.TabIndex = 11;
             this.ClearButton.Text = "Clea&r";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // CloseButton
             // 
@@ -150,6 +151,7 @@
             this.CloseButton.TabIndex = 12;
             this.CloseButton.Text = "&Close";
             this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // ProductEntryForm
             // 

@@ -38,5 +38,6 @@ namespace DragonPhoenixToy
         {
             Close();
         }
+
     }
 }
