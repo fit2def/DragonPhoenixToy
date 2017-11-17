@@ -38,7 +38,7 @@
             // 
             // AddProductButton
             // 
-            this.AddProductButton.Location = new System.Drawing.Point(79, 263);
+            this.AddProductButton.Location = new System.Drawing.Point(60, 263);
             this.AddProductButton.Name = "AddProductButton";
             this.AddProductButton.Size = new System.Drawing.Size(298, 207);
             this.AddProductButton.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             // UpdateInventoryButton
             // 
-            this.UpdateInventoryButton.Location = new System.Drawing.Point(530, 263);
+            this.UpdateInventoryButton.Location = new System.Drawing.Point(505, 263);
             this.UpdateInventoryButton.Name = "UpdateInventoryButton";
             this.UpdateInventoryButton.Size = new System.Drawing.Size(298, 207);
             this.UpdateInventoryButton.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // DisplayInventoryButton
             // 
-            this.DisplayInventoryButton.Location = new System.Drawing.Point(981, 263);
+            this.DisplayInventoryButton.Location = new System.Drawing.Point(962, 263);
             this.DisplayInventoryButton.Name = "DisplayInventoryButton";
             this.DisplayInventoryButton.Size = new System.Drawing.Size(298, 207);
             this.DisplayInventoryButton.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             // CheckOutButton
             // 
-            this.CheckOutButton.Location = new System.Drawing.Point(1432, 263);
+            this.CheckOutButton.Location = new System.Drawing.Point(1405, 263);
             this.CheckOutButton.Name = "CheckOutButton";
             this.CheckOutButton.Size = new System.Drawing.Size(298, 207);
             this.CheckOutButton.TabIndex = 3;

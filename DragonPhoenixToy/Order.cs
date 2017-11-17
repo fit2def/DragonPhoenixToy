@@ -42,12 +42,11 @@ namespace DragonPhoenixToy
             builder.AppendLine($"{DateTime.Now}");
             foreach (Product p in Items)
             {
-                builder.AppendLine($"{p.Name:-15} {p.UnitSold:5} {p.CalculateProductCost():5:n2}");
-                builder.AppendLine($"{"Sub total:":-20}{CalculateSubTotal():-10:n2}");
-                builder.AppendLine($"{"Tax:":-20}{CalculateTax():-10:n2}");
-                builder.AppendLine($"{"Total":-20}{CalculateTotal():-10:n2}");
-
+                builder.AppendLine($"{p.Name,-15} {p.UnitSold, 5} {p.CalculateProductCost(), 15:n2}");
             }
+            builder.AppendLine($"{"Sub total:",-20}{CalculateSubTotal(),-10:n2} ");
+            builder.AppendLine($"{"Tax:",-20}{CalculateTax(),-10:n2} ");
+            builder.AppendLine($"{"Total:",-20}{CalculateTotal(),-10:n2} ");
             return builder.ToString();
         }
     }

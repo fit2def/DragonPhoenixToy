@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.unitsSoldTextBox = new System.Windows.Forms.TextBox();
+            this.idTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.AddToOrderButton = new System.Windows.Forms.Button();
@@ -38,39 +38,40 @@
             this.PrintReceiptButton = new System.Windows.Forms.Button();
             this.CloseButton = new System.Windows.Forms.Button();
             this.ReceiptListBox = new System.Windows.Forms.ListBox();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.unitsSoldTextBox);
+            this.groupBox1.Controls.Add(this.idTextBox);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(124, 46);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
             this.groupBox1.Size = new System.Drawing.Size(740, 277);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add to Order";
             // 
-            // textBox2
+            // unitsSoldTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(380, 177);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 31);
-            this.textBox2.TabIndex = 4;
+            this.unitsSoldTextBox.Location = new System.Drawing.Point(380, 177);
+            this.unitsSoldTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.unitsSoldTextBox.Name = "unitsSoldTextBox";
+            this.unitsSoldTextBox.Size = new System.Drawing.Size(196, 31);
+            this.unitsSoldTextBox.TabIndex = 4;
             // 
-            // textBox1
+            // idTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(380, 83);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 31);
-            this.textBox1.TabIndex = 3;
+            this.idTextBox.Location = new System.Drawing.Point(380, 83);
+            this.idTextBox.Margin = new System.Windows.Forms.Padding(6);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(196, 31);
+            this.idTextBox.TabIndex = 3;
             // 
             // label2
             // 
@@ -95,7 +96,7 @@
             // AddToOrderButton
             // 
             this.AddToOrderButton.Location = new System.Drawing.Point(124, 335);
-            this.AddToOrderButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.AddToOrderButton.Margin = new System.Windows.Forms.Padding(6);
             this.AddToOrderButton.Name = "AddToOrderButton";
             this.AddToOrderButton.Size = new System.Drawing.Size(150, 87);
             this.AddToOrderButton.TabIndex = 1;
@@ -106,7 +107,7 @@
             // ReadyToPayButton
             // 
             this.ReadyToPayButton.Location = new System.Drawing.Point(330, 335);
-            this.ReadyToPayButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ReadyToPayButton.Margin = new System.Windows.Forms.Padding(6);
             this.ReadyToPayButton.Name = "ReadyToPayButton";
             this.ReadyToPayButton.Size = new System.Drawing.Size(150, 87);
             this.ReadyToPayButton.TabIndex = 2;
@@ -117,7 +118,7 @@
             // PrintReceiptButton
             // 
             this.PrintReceiptButton.Location = new System.Drawing.Point(554, 335);
-            this.PrintReceiptButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.PrintReceiptButton.Margin = new System.Windows.Forms.Padding(6);
             this.PrintReceiptButton.Name = "PrintReceiptButton";
             this.PrintReceiptButton.Size = new System.Drawing.Size(150, 87);
             this.PrintReceiptButton.TabIndex = 3;
@@ -128,7 +129,7 @@
             // CloseButton
             // 
             this.CloseButton.Location = new System.Drawing.Point(758, 335);
-            this.CloseButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.CloseButton.Margin = new System.Windows.Forms.Padding(6);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(150, 87);
             this.CloseButton.TabIndex = 4;
@@ -141,10 +142,14 @@
             this.ReceiptListBox.FormattingEnabled = true;
             this.ReceiptListBox.ItemHeight = 25;
             this.ReceiptListBox.Location = new System.Drawing.Point(124, 458);
-            this.ReceiptListBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ReceiptListBox.Margin = new System.Windows.Forms.Padding(6);
             this.ReceiptListBox.Name = "ReceiptListBox";
             this.ReceiptListBox.Size = new System.Drawing.Size(780, 179);
             this.ReceiptListBox.TabIndex = 5;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // CheckOutForm
             // 
@@ -157,7 +162,7 @@
             this.Controls.Add(this.ReadyToPayButton);
             this.Controls.Add(this.AddToOrderButton);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "CheckOutForm";
             this.Text = "CheckOutForm";
             this.Load += new System.EventHandler(this.CheckOutForm_Load);
@@ -170,8 +175,8 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox unitsSoldTextBox;
+        private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button AddToOrderButton;
@@ -179,5 +184,6 @@
         private System.Windows.Forms.Button PrintReceiptButton;
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.ListBox ReceiptListBox;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
