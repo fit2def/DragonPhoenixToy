@@ -65,6 +65,7 @@
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(214, 94);
             this.SaveButton.TabIndex = 2;
+            this.SaveButton.TabStop = false;
             this.SaveButton.Text = "&Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
@@ -110,35 +111,36 @@
             this.productOnHandInput.Location = new System.Drawing.Point(337, 425);
             this.productOnHandInput.Name = "productOnHandInput";
             this.productOnHandInput.Size = new System.Drawing.Size(234, 31);
-            this.productOnHandInput.TabIndex = 7;
+            this.productOnHandInput.TabIndex = 4;
             // 
             // productPriceInput
             // 
             this.productPriceInput.Location = new System.Drawing.Point(337, 341);
             this.productPriceInput.Name = "productPriceInput";
             this.productPriceInput.Size = new System.Drawing.Size(234, 31);
-            this.productPriceInput.TabIndex = 8;
+            this.productPriceInput.TabIndex = 3;
             // 
             // descriptionInput
             // 
             this.descriptionInput.Location = new System.Drawing.Point(337, 265);
             this.descriptionInput.Name = "descriptionInput";
             this.descriptionInput.Size = new System.Drawing.Size(234, 31);
-            this.descriptionInput.TabIndex = 9;
+            this.descriptionInput.TabIndex = 2;
             // 
             // productIdInput
             // 
             this.productIdInput.Location = new System.Drawing.Point(337, 90);
             this.productIdInput.Name = "productIdInput";
             this.productIdInput.Size = new System.Drawing.Size(234, 31);
-            this.productIdInput.TabIndex = 10;
+            this.productIdInput.TabIndex = 0;
             // 
             // ClearButton
             // 
             this.ClearButton.Location = new System.Drawing.Point(337, 548);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(203, 94);
-            this.ClearButton.TabIndex = 11;
+            this.ClearButton.TabIndex = 102023;
+            this.ClearButton.TabStop = false;
             this.ClearButton.Text = "Clea&r";
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
@@ -149,6 +151,7 @@
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(197, 94);
             this.CloseButton.TabIndex = 12;
+            this.CloseButton.TabStop = false;
             this.CloseButton.Text = "&Close";
             this.CloseButton.UseVisualStyleBackColor = true;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);

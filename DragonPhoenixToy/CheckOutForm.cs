@@ -33,12 +33,13 @@ namespace DragonPhoenixToy
         private bool IdIsValid()
         {
             string text = idTextBox.Text;
+            Product product = allProducts.Find(p => p.ID == text);
             if (string.IsNullOrEmpty(text))
             {
                 MessageBox.Show("Please enter a product ID");
                 return false;
             }
-            else if (allProducts.Find(p => p.ID == text) == null)
+            else if (product == null)
             {
                 MessageBox.Show("Product doesn't exist");
                 return false;
@@ -51,7 +52,15 @@ namespace DragonPhoenixToy
         {
             try
             {
-                int.Parse(unitsSoldTextBox.Text);
+                var units = int.Parse(unitsSoldTextBox.Text);
+                Product product = allProducts.Find(p => p.ID == idTextBox.Text);
+                if (!(product.OnHand >= units))
+                {
+                    MessageBox.Show($"Not enough in stock. Only have {product.OnHand} left.");
+                    unitsSoldTextBox.Focus();
+                    return false;
+                }
+
                 return true;
             }
             catch (Exception)
@@ -67,8 +76,11 @@ namespace DragonPhoenixToy
         {
             int index = allProducts.FindIndex(p => p.ID == idTextBox.Text);
             Product product = allProducts[index];
-            product.UnitSold = int.Parse(unitsSoldTextBox.Text);
+            int units = int.Parse(unitsSoldTextBox.Text);
+            product.UnitSold = units;
+            product.OnHand -= units;
             productsInOrder.Add(product);
+            ProductWriter.AddProduct(product);
         }
 
         private void CleanUp()

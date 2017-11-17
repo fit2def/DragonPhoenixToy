@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
 namespace DragonPhoenixToy
@@ -9,9 +12,12 @@ namespace DragonPhoenixToy
         public static List<Product> Products()
         {
             List<Product> products = new List<Product>();
-            IEnumerable<string> productIds = GetProductIds();
+            IEnumerable<string> productIds = GetFileNames();
+            Regex re = new Regex(@"\d+");
+            var sorted =
+                productIds.OrderBy(p => int.Parse(re.Match(p).Value));
 
-            foreach (var id in productIds)
+            foreach (var id in sorted)
             {
                 Product p = ReadSingleProduct(id);
                 products.Add(p);
@@ -20,16 +26,17 @@ namespace DragonPhoenixToy
                 
         }
 
-        private static IEnumerable<string> GetProductIds()
+        private static IEnumerable<string> GetFileNames()
         {
             List<string> fileNames = new List<string>();
             var files = Directory.GetFiles("Products");
+
+            
             foreach (var f in files)
             {
                 fileNames.Add(f);
             }
             return fileNames;
-
         }
 
         private static Product ReadSingleProduct(string fileName)
